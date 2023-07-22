@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>part-2 variables</title>
+  </head>
+  <body>
+    <p>Cart</p>
+    <button onclick="
+    quantity+=1;
+    console.log(quantity);
+    ">Add to cart</button>
+    <button onclick="
+    quantity+=4;
+    console.log(quantity);
+    ">+4</button>
+    <button onclick="
+    quantity+=5;
+    console.log(quantity);
+    ">+5</button>
+    <button onclick="
+    quantity-=1;
+    console.log(quantity);
+    ">Remove from cart</button>
+    <button onclick="
+    quantity-=2;
+    console.log(quantity);
+    ">-2</button>
+    <button onclick="
+    quantity-=3;
+    console.log(quantity);
+    ">-3</button>
+    <script>
+      let cost = (5*1) + (2*3) + (1*9);
+      let tax = cost * 0.1;
+      let totalCost = cost + tax;
+      console.log(`Total cost: $${totalCost}`);
+
+      //Quantity
+      let quantity = 0;
+
+    </script>
+  </body>
+</html>
