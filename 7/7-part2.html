@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      //d.)
+      function convertToFahrenheit(celsius){
+        return (celsius * 9 / 5) + 32;
+      }
+      console.log(convertToFahrenheit(25));
+
+      //e.)
+      function convertToCelsis(fahrenheit){
+        return (fahrenheit - 32)* 5 / 9;
+      }
+      console.log(convertToCelsis(86));
+
+      //f.)
+      function convertTemperature(degree,unit){
+        if(unit === 'C'){
+          console.log(convertToFahrenheit(degree));
+        }else if(unit ==='F'){
+          console.log(convertToCelsis(degree));
+        }else{
+          console.log('undefined temperature');
+        }
+      }
+
+      convertTemperature(25,'C');
+      convertTemperature(86,'F');
+    </script>
+  </body>
+</html>
