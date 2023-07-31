@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      //a.)
+      const hour = 24;
+      if(hour>=6 && hour<=12){
+        console.log("Good morning");
+      }if(hour>=12 && hour<=17){
+        console.log("Good afternoon");
+      }else{
+        console.log("Good night");
+      }
+
+      //b.)
+      const name = 'Ganesh';
+      if(hour>=6 && hour<=12){
+        console.log(`Good morning ${name}`);
+      }if(hour>=12 && hour<=17){
+        console.log(`Good afternoon ${name}`);
+      }else{
+        console.log(`Good night ${name}`);
+      }
+
+      //c.)
+      const age = 3;
+      if(age <= 6 || age > 65){
+        console.log('Discount');
+      }else{
+        console.log('No discount');
+      }
+
+      //d.)
+      const isHoliday = false;
+      if((age <= 6 || age > 65) && !isHoliday){
+        console.log('Discount');
+      }else{
+        console.log('No discount');
+      }
+
+      //e.)
+      const random = Math.random();
+      let result;
+      if(random>=0 && random<=0.5){
+        result = 'Heads';
+      }else if(random>0.5 && random<=1){
+        result = 'Tails';
+      }
+      const guess = "Tails";
+      if(result === guess){
+        console.log('you win');
+      }else{
+        console.log('you lose');
+      }
+
+      //f.)
+
+      result = (result===guess)? "you win" : "you lose";
+      console.log(result);
+
+    </script>
+  </body>
+</html>
