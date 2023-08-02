@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects
+    </title>
+  </head>
+  <body>
+    <script>
+      /*
+      //Part-1
+      const product = {
+        name : 'laptop',
+        price : 72000
+      };
+
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+      console.log(typeof(product));
+
+      //we can simple add new property to the object
+      product.newProperty = 'demo';
+      console.log(product);
+
+      //we can also delete the properties using delete keyword
+      delete product.newProperty;
+      console.log(product); */
+
+
+
+      /*
+      //Part-2
+      const product2 = {
+        name: 'shirt',
+        
+        ['delivery-time']: '4 days',
+        
+        ratings: {
+          stars: 4.7,
+          count: 87
+        },
+
+        func: function add(num1,num2){
+          return num1 + num2;
+        }
+      };
+      console.log(product2);
+      // dot notation is used by default
+      console.log(product2.name);
+      // Bracket notation is used for the below case -
+      console.log(product2['delivery-time']);
+
+      console.log(product2);
+      //we can also nest the objects
+      console.log(product2.ratings.stars);
+      console.log(product2.ratings.count);
+
+      //object + function = method
+      console.log(product2.func(10,11));
+
+
+
+      //part-3 
+      /*
+       JSON - Java Script Object Notation
+       -similar to java script 
+       -but it has less features
+       -does not support function
+       -reason to use json => json syntax can be understandable by every programming language
+       -used to send data between two computers 
+
+       
+      //object -> json
+      console.log(JSON.stringify(product2));
+      
+      //json -> object
+      let jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+      */
+
+
+
+      //Part-4
+
+      //Auto Boxing - it automatically box the string into object
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+      console.log('hello'.toLowerCase());
+
+      //References
+      const obj1 = {
+        message: 'Hello'
+      };
+      const obj2 = obj1;
+
+      obj2.message='Good Morning';
+      console.log(obj1);
+      console.log(obj2);
+
+      console.log(obj1===obj2);
+
+      //Short Hand 
+      const obj4={
+        message: 'Hello',
+        price: 100
+      };
+      // instead -> const message = obj4.message;
+      //const {message} = obj4;
+      //console.log(message);
+      
+      const {message,price} = obj4;
+      console.log(message+" "+price);
+    </script>
+  </body>
+</html>
