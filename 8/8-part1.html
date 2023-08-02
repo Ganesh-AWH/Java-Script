@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      //a.)
+      const product1 = {
+        name: 'basketball',
+        price: 2095
+      };
+      console.log(`name: ${product1.name}`);
+      console.log(`price: ${product1.price}`);
+
+      //b.)
+      product1.price += 500;
+      console.log(product1);
+
+      //c.)
+      product1['delivery-time'] = '3 days';
+      console.log(product1);
+      
+      //d.)
+      const product2 = {
+        name: 'Cricket bat',
+        price: 7000
+      };
+
+      function compareProduct(product1,product2){
+        return product1.price<product2.price? product1.name : product2.name;
+      }
+
+      console.log(`less expensive: ${compareProduct(product1,product2)}`);
+    </script>
+  </body>
+</html>
