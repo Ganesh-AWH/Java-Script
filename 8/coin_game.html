@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin</title>
+  </head>
+  <body>
+    <button onclick="
+      playGame('Heads');
+    ">Heads</button>
+    <button onclick="
+      playGame('Tails');
+    ">Tails</button>
+    <button onclick="
+      scores.wins = 0,
+      scores.losses = 0
+      localStorage.removeItem('localScores');
+    ">Reset</button>
+    <script>
+      let scores = JSON.parse(localStorage.getItem('localScore')) || {
+        wins: 0,
+        losses: 0
+      };
+      function playGame(guess){
+        const computerMove = generateComputerMove();
+        if(computerMove === guess){
+          result = 'You Win';
+          scores.wins += 1;
+        }else{
+          result = 'You Lose';
+          scores.losses += 1;
+        }
+
+        localStorage.setItem('localScore',JSON.stringify(scores));
+
+        alert(`your move:${guess} computer move:${computerMove} ------> ${result}
+wins:${scores.wins} losses:${scores.losses}`);
+      }
+
+      function generateComputerMove(){
+        const random = Math.random();
+        let computerMove;
+        if(random>=0 && random<=0.5){
+           return 'Heads';
+        }else if(random>0.5 && random<=1){
+           return 'Tails';
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!--
+      //f.)
+
+      computerMove = (computerMove===guess)? "you win" : "you lose";
+      console.log(computerMove); -->
+
