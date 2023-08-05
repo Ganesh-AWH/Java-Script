@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    <style>
+      div{
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>9.a)</p>
+      <button>9a</button>
+    </div>
+
+    <div>
+      <p>9b.)</p>
+      <button class="js-button">9b</button><br>
+    </div>
+    
+      <div>
+        <p>9c.)</p>
+        <button onclick="
+          displayCoin('Heads');
+        ">Head</button>
+        <button onclick="
+          displayCoin('Tails');
+        ">Tails</button>
+        <p class="result"></p>
+      </div>
+  </body>
+  <script>
+    //9.a)
+    console.log(document.querySelector('button'));
+    //9b.)
+    document.querySelector('.js-button').innerHTML = "9b done!";
+    //9c.)
+    function displayCoin(event){
+      document.querySelector('.result').innerHTML = `You choose: ${event}`;
+    }
+
+  </script>
+</html>
