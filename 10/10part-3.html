@@ -3,6 +3,9 @@
 	<head>
 		<title>HTML-CSS-DOM</title>
 		<style>
+			div{
+				margin-bottom: 40px;
+			}
 			.toggle-button{
 				background-color: black;
 				color: white;
@@ -20,9 +23,31 @@
 				border-radius: 10px;
 				font-size: 15px;
 			}    
+			.cost-input{
+				font-size: 15px;
+				padding: 10px 10px;
+				border-radius: 5px;
+				border: 1px solid;
+			}
+
+			.calculate-button{
+				background-color: green;
+				font-size: 15px;
+				border: none;
+				color: white;
+				padding: 12px 11px;
+				border-radius: 5px;
+			}
+
+			.error-result{
+				color: red;
+				font-size: 20px;
+				font-weight: 700;
+			}
 			</style>
 	</head>
 	<body>
+		<div>
 			<button class="toggle-button js-button" onclick="
 				toggleButton('.js-button');
 			">Gaming</button>
@@ -32,7 +57,21 @@
 			<button class="toggle-button js-button-3" onclick="
 				toggleButton('.js-button-3');
 			">Tech</button>
-
+		</div>
+			
+		<div>
+			<p class="amazon">Amazon Shipping Calculator</p>
+			<p>Orders under 40 = +10 shipping.</p>
+			<p>Orders above 40 = FREE shipping.</p>
+			<input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="
+				handleCostKeyDown(event);
+			">
+			<button onclick="
+				totalCost();
+			" class="calculate-button">Calculate</button>
+			<p class="js-amazon-result"></p>
+			<p class="js-error-result error-result"></p>
+		</div>
 			<script>	
 			function toggleButton(selector){
 				const button = document.querySelector(selector);
@@ -48,7 +87,32 @@
 				if(previousButton){
 					previousButton.classList.remove('is-toggled');
 				}
-			}   	
+			}  
+			
+			function totalCost(){
+				const inputElement = document.querySelector('.js-cost-input');
+				document.querySelector('.js-amazon-result')
+					.innerHTML = '';
+				document.querySelector('.js-error-result')
+					.innerHTML = '';
+				let cost = Number(inputElement.value);
+				if(cost<0){
+					document.querySelector('.js-error-result').innerHTML = 'Error: cost cannot be less than 0';
+					return ;
+				}
+				if(cost <= 40 && cost>0){
+					cost += 10;
+					document.querySelector('.js-amazon-result').innerHTML = cost;
+				}else{
+					document.querySelector('.js-amazon-result').innerHTML = cost;
+				} 
+			}
+
+			function handleCostKeyDown(event){
+				if(event.key === 'Enter'){
+					totalCost();
+				}
+			}
 			</script>       
 	</body>
 </html>
