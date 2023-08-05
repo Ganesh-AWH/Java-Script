@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM-Flipkart cart</title>
+    <style>
+      div{
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        9g.) <br><br>
+        <button onclick="
+          displayCart();
+        ">Show Quantity</button>
+        <button onclick="
+          cartQuantity += 1;
+          displayCart();
+        ">Add to Cart</button>
+        <button onclick="
+          cartQuantity += 2;
+          displayCart();
+        ">+2</button>
+        <button onclick="
+          cartQuantity += 3;
+          displayCart();
+        ">+3</button>
+        <button onclick="
+          cartQuantity>0? cartQuantity-=1 : cartQuantity+=0;
+          displayCart();
+        ">Remove from cart</button>
+        <button onclick="
+          cartQuantity>1? cartQuantity-=2 : cartQuantity+=0;
+          displayCart();
+        ">-2</button>
+      </p>
+
+      <p class="js-cart-result"></p>
+    </div>
+    <script>
+      let cartQuantity = 0;
+      function displayCart(){
+        document.querySelector('.js-cart-result').innerHTML = `Cart Quantity = ${cartQuantity}`;
+      }
+
+    </script>
+  </body>
+</html>
