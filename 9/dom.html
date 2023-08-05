@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM-Document Object Model</title>
+  </head>
+  <body>
+    <button>Hello</button>
+    <button class="world-button">world</button>
+    <script>
+      /*
+      console.log(document.title);
+      document.title = 'changed';
+      console.log(document.body);
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = 'Good Morning';
+      document.body.innerHTML = '<button>Submit</button>'
+      */
+
+      console.log(document.querySelector('.world-button'));
+      document.querySelector('.world-button').innerHTML = 'Changed';
+    </script>
+  </body>
+</html>
