@@ -21,7 +21,7 @@ body{
     transition: border 0.17s;
 }
 .move-button:hover{
-    border: 4px lightgreen solid;
+    border: 4px rgb(98, 248, 98) solid;
 }
 .emoj{
     width: 50px;
@@ -47,6 +47,7 @@ body{
     font-weight: 600;
     cursor: pointer;
     padding: 10px 20px;
+    transition: background-color 0.17s;
 }
 
 .reset-button:hover{

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML-CSS-DOM</title>
+    </head>
+    <style>
+        .cart-button{
+            color: black;
+            background-color: rgb(255, 216, 20);
+            border: none;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            border-radius: 18px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.17s,opacity 0.17s;
+        }
+        .cart-button:hover{
+          background-color: rgb(255, 190, 50);
+        }
+        .cart-button:active{
+          opacity: 0.7;
+        }
+    </style>
+    <body>
+        <div>
+            <p>10a.)</p>
+            <button class="cart-button">Add to Cart</button>
+        </div>
+
+        <div>
+            <p>10b.)</p>
+            <button class="js-button">Test</button>
+        </div>
+        <script>
+            const element = document.querySelector('.js-button');
+            console.log(element.classList.contains('js-button'));
+        </script>
+    </body>
+</html>
