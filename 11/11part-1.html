@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays</title>
+  </head>
+  <body>
+
+    <script>
+      //11a.)
+      let arr = [10,20,30];
+      arr[arr.length-1] = 99;
+      console.log(arr);
+
+      //11b.)
+      let arr1 = [1,20,22,24,5];
+      console.log(getLastValue(arr));
+      let arr2 = ['hi','hello','good'];
+      console.log(getLastValue(arr2));
+      function getLastValue(arr){
+        return arr[arr.length-1];
+      }
+
+      //11c.)
+      console.log(arraySwap(arr1));
+      function arraySwap(arr){
+        const temp = arr[0];
+        arr[0] = arr[arr.length-1];
+        arr[arr.length-1] = temp;
+        return arr;
+      }
+    </script>
+  </body>
+</html>
