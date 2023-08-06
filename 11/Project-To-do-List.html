@@ -2,8 +2,18 @@
 <html>
   <head>
     <title>Css Version of To do list</title>
+    <link rel="stylesheet" href="Project-To-Do-list.css">
   </head>
   <body>
-    
+    <p class="title">To-Do list</p>
+    <div class="todo-input-grid">
+      <input type="text" class="js-name-input name-input" placeholder="To do name">
+      <input type="date" class="js-date-input date-input">
+      <button onclick="
+        todoAdd();
+      " class="add-button">Add</button>
+    </div>
+    <div class="js-result to-do-grid todo-grid"></div>
   </body>
+  <script src="Project-To-do-List.js"></script>
 </html>

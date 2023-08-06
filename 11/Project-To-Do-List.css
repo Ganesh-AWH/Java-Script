@@ -1,0 +1,67 @@
+body{
+  font-family: Arail;
+  background-color: black;
+  color: white;
+}
+.title{
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.name-input{
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.date-input{
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.add-button{
+  border-radius: 5px;
+  padding: 15px 30px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background-color: green;
+}
+.add-button:hover{
+  background-color: white;
+  color: green;
+}
+
+.todo-input-grid,
+.todo-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  row-gap: 20px;
+  column-gap: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.todo-input-grid{
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.todo-delete-button{
+  background-color: rgba(255, 0, 0, 0.785);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+}
+
+.todo-delete-button:hover{
+  background-color: white;
+  color:  rgb(255, 0, 0);
+}
