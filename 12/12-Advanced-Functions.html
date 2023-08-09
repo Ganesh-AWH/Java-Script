@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    
+    <script>
+
+      //Normal function
+      function greeting(){
+        console.log('hello');
+      }
+      greeting();
+
+      //storing function in a variable
+
+      let varFunction = function greeting(){
+        console.log('i am variable greeting function');
+      };
+      console.log(typeof varFunction);
+      console.log(varFunction);
+      //calling variable as a function
+      varFunction();
+
+      //passing function as a parameter
+      function run(param){
+        //console.log(param);
+        param();
+      }
+
+      run(function sum(){
+        console.log(1+2);
+      });
+
+
+      //setTime out function
+      //It is asynschronous function
+      //It will not wait other to complete
+
+      //the below function does not have function name because function it is anonymous function.
+      setTimeout(function(){ 
+        console.log('Inside timeout');
+      },4000);
+      console.log('outside-1');
+      console.log('outside-2');
+
+
+      setInterval(function(){
+        console.log('interval');
+      },2000);
+    </script>
+  </body>
+</html>
