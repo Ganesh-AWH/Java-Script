@@ -1,7 +1,11 @@
-let todoList = [{
+let todoList = JSON.parse(localStorage.getItem('localList')) || [{
   name: '',
   dueDate: ''
 }];
+
+displayList();
+
+
 function todoAdd(){
   
   const inputElement = document.querySelector('.js-name-input');
@@ -22,6 +26,7 @@ function todoAdd(){
 
   inputElement.value = '';
   displayList();
+  saveToStorage();
 }
 function displayList(){
   let toListHtml = '';
@@ -44,4 +49,8 @@ function displayList(){
   }
 
   document.querySelector('.js-result').innerHTML = toListHtml;
+}
+
+function saveToStorage(){
+  localStorage.setItem('localList',JSON.stringify(todoList));
 }
