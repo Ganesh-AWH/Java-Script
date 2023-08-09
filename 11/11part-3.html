@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Arrays</title>
+	</head>
+	<body>
+
+	<script>
+		//i.)
+		const arr1 = [2,5,7];
+		//addNum(arr1,4);
+		function addNum(arr1,x){
+			for(let i in arr1){
+				arr1[i] += x;
+			}
+		}
+		console.log(arr1);
+
+		const arr2 = [1,-1,3,0,4,-5];
+		addArrays(arr1,arr2);
+		function addArrays(arr1,arr2){
+			for(let i in arr1){
+				arr1[i] += arr2[i];
+			}
+		}
+		console.log(arr1);
+
+		function countPositive(arr2){
+			let count = 0;
+				for(let i of arr2){
+					if(i>0)
+						count+=1;
+				}
+			return count;
+		}
+		</script>
+	</body>
+</html>
