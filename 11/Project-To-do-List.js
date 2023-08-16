@@ -30,8 +30,8 @@ function todoAdd(){
 }
 function displayList(){
   let toListHtml = '';
+  /*
   for(let i in todoList){
-
     const toDoObject = todoList[i];
     const {name,dueDate} = toDoObject;
     // const name = toDoObject.name;
@@ -46,8 +46,22 @@ function displayList(){
         " class="todo-delete-button">Delete</button>
       `;
     }
-  }
+  }*/
 
+  //update using advanced function i.e for each loop
+  todoList.forEach( function(toDoObject,index){
+    const {name,dueDate} = toDoObject;
+    if(name && dueDate){
+      toListHtml += `
+        <div class="todo-output">${name}</div>
+        <div class="todo-output">${dueDate}</div>
+        <button onclick="
+          todoList.splice(${index},1);
+          displayList();
+        " class="todo-delete-button">Delete</button>
+      `;
+    }
+  });
   document.querySelector('.js-result').innerHTML = toListHtml;
 }
 
