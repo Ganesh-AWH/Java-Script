@@ -25,8 +25,49 @@ score = {
 */
 
 displayScore();
+// addEvent Listener
+document.querySelector('.js-rock-button')
+  .addEventListener('click',() => {
+    playGame('rock');
+  });
 
-let isPlaying = false; 
+document.querySelector('.js-paper-button')
+  .addEventListener('click',() => {
+    playGame('paper');
+  });
+
+document.querySelector('.js-scissors-button')
+  .addEventListener('click',() =>{
+    playGame('scissors');
+  });
+
+const resetFunction = () => {
+  score.wins = 0;
+  score.ties = 0;
+  score.losses = 0;
+  localStorage.removeItem('localScore');
+  displayScore();
+};
+document.querySelector('.js-reset-button')
+  .addEventListener('click',() => resetFunction() );
+
+
+//speacial feature
+//r-> rock
+//p-> paper
+//s-> scissors
+document.body.addEventListener('keydown',(event) =>{
+  if(event.key ==='r' || event.key ==='R'){
+    playGame('rock');
+  }else if(event.key === 'p' || event.key === 'P'){
+    playGame('paper');
+  }else if(event.key === 's' || event.key === 'S'){
+    playGame('scissors');
+  }else if(event.key === 'Backspace'){
+    resetFunction();
+  }
+});
+
 
 function playGame(playerMove){
   const computerMove = pickComputerMove();
@@ -40,17 +81,17 @@ function playGame(playerMove){
       result = 'You Win';
     }
   }
-
-else if(playerMove === 'rock'){
-  if(computerMove === 'rock'){
-    result = 'Tie';
-  }else if(computerMove === 'scissors'){
-    result = 'You Win';
-  }else{
-    result = 'You Lose';
+  
+  else if(playerMove === 'rock'){
+    if(computerMove === 'rock'){
+      result = 'Tie';
+    }else if(computerMove === 'scissors'){
+      result = 'You Win';
+    }else{
+      result = 'You Lose';
+    }
   }
-}
-
+  
 else if(playerMove === 'paper'){
   if(computerMove === 'paper'){
     result = 'Tie';
@@ -75,12 +116,12 @@ localStorage.setItem('localScore',JSON.stringify(score));
 let move = `you ${playerMove} - computer ${computerMove}`; 
 displayScore();
 document.querySelector('.result')
-  .innerHTML = `${result}.`;
+.innerHTML = `${result}.`;
 document.querySelector('.moves')
-  .innerHTML = `You
-    <img src="images\\${playerMove}-emoji.png" class="result-move">
-    <img src="images\\${computerMove}-emoji.png" class="result-move">
-    Computer`;
+.innerHTML = `You
+<img src="images\\${playerMove}-emoji.png" class="result-move">
+<img src="images\\${computerMove}-emoji.png" class="result-move">
+Computer`;
 }
 
 
@@ -94,24 +135,27 @@ function pickComputerMove(){
   }else if(randomNumber >=2/3 && randomNumber <= 1){
     computerMove = 'scissors';
   }
-
+  
   return computerMove;
 }
 
 function displayScore(){
   document.querySelector('.scores')
-    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+  .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
 
+//const autoPlay = () => {};
+//the above code can also use because of hoisting we use below code.
+let isPlaying = false; 
 let intervalId;
 function autoPlay(){
   //if player is not playing make the as true 
   if(!isPlaying){
-    intervalId = setInterval(function(){
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
-  },1500);
-  isPlaying = true;
+    },1500);
+    isPlaying = true;
   }
   //if player is playing make them as false
   else{

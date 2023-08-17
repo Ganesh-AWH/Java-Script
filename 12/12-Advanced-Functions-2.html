@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Function part-2</title>
+  </head>
+  <body>
+    <button class="js-button">Click Me</button>
+    <script>
+      const buttonElement = document.querySelector('.js-button');
+
+      const eventListener = () => {
+        console.log('clicked');
+      };
+      //add event listener
+      buttonElement.addEventListener('click',eventListener);
+      
+      //remove event listener
+      buttonElement.removeEventListener('click',eventListener);
+      buttonElement.addEventListener('click',()=>{
+        console.log('clicked2');
+      });
+
+      
+
+      const normalFunction = function(){
+        console.log('normal');
+      };
+      normalFunction();
+
+      const arrowFunction = () => {
+        console.log('arrow');
+      };
+      arrowFunction();
+
+      const oneline = (para) => para+1;
+      console.log(oneline(10));
+
+      //keyDown
+
+      document.body.addEventListener('keydown',() => {
+        console.log(event.key);
+      });
+    </script>
+  </body>
+</html>
